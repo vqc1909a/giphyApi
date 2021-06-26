@@ -4,7 +4,7 @@ import GifsContext from '../context/GifsContext';
 
 
 const useGifs = (search) => {
-  const INITIAL_PAGE = parseInt(sessionStorage.getItem("lastPage")) || 1;
+  const INITIAL_PAGE = search ? 1 : parseInt(sessionStorage.getItem("lastPage")) || 1;
   const {gifs, setGifs, setTotalItems, elementosPorPagina} = useContext(GifsContext);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(INITIAL_PAGE);

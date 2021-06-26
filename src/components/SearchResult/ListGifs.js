@@ -9,7 +9,7 @@ const ListGifs = ({gifs}) => {
       <Spinner></Spinner>
       :
       <div className="gifs">
-      {gifs.map(({id, title, url, slug}) => <Gif id={id} key={id} title={title} url={url} slug={slug} ></Gif>)}
+      {gifs.map(({id, title, url}) => <Gif id={id} key={id} title={title} url={url} ></Gif>)}
       </div>
      }
   </>

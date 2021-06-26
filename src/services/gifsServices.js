@@ -10,13 +10,12 @@ export const getGifs = ({search = "random", page = 1, limit = 10}) => {
             const {data, pagination} = response;
             const {total_count} = pagination;
             const gifs = data.map(gif => {
-             const {id, title, images, slug} = gif;
+             const {id, title, images} = gif;
              const {url} =  images.fixed_width_small_still; 
              return {
                id, 
                title, 
-               url,
-               slug
+               url
              }
             });
             return {gifs, total_items: total_count}
