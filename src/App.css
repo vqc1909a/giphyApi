@@ -1,38 +1,126 @@
-.App {
+*,*:after,*:before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (min-width: 768px){
+  .main{
+    grid-template-columns: 8fr 2fr;
   }
 }
+h1 img{
+  cursor: pointer;
+  height: 200px;
+  margin-bottom: 2rem;
+}
+h2 {
+  text-align: left;
+}
 
-.App-header {
+.App-content {
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.App-content .gifs {
+ display: grid;
+ min-height: 100vh;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ grid-template-rows: masonry;
+ gap: 1rem;
+}
+/* 
+@media screen and (min-width: 576px) {
+  .App-content .gifs {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width: 768px){
+  .App-content .gifs{
+    grid-template-columns: repeat(4, 1fr);
   }
-  to {
-    transform: rotate(360deg);
-  }
+} */
+
+.gif{
+  cursor: pointer;
+  justify-self: center;
+  align-self: center;
 }
+.gif img{
+  width: 100%;
+}
+
+.App-content a.active{
+  color: white;
+}
+button{
+  font-size: 48px;
+}
+a{
+  color: #09f;
+  font-size: 32px;
+}
+.loading{
+  font-size: 50px;
+  min-height: 100vh;
+}
+.categorias{
+  padding: 3rem 0;
+}
+.categorias li{
+  list-style: none;
+}
+.categorias li a{
+  text-decoration: none;
+  text-align: left;
+  color: white;
+}
+.categorias li a:hover{
+  color: grey;
+}
+
+.buttons{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+
+}
+.button{
+  display: inline-block;
+  cursor: pointer;
+  padding: .5rem 1rem;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
+  margin: .5rem 0;
+}
+.button.activo{
+   background-color: rgba(153, 34, 17, 1);
+   color: #fff;
+}               
+.button:not(:last-child){
+  margin-right: .5rem;
+}
+.button.disabled{
+   pointer-events: none;
+}
+@media only screen and (min-width: 1024px){
+    .button{
+      padding: 1rem 2rem;
+    }
+    .button:not(:last-child){
+      margin-right: 1rem;
+    }
+}
+
+

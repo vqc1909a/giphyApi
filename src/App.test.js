@@ -1,8 +1,18 @@
-import { render, screen } from '@testing-library/react';
+import 'intersection-observer';
+import { render } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+//! Sincrono
+// test('renders learn react link', () => {
+//   const {getByText} = render(<App />);
+//   const title = getByText(/Ultima Búsqueda/i);
+//   expect(title).toBeInTheDocument();
+// });
+
+//!Asincrono (Rutas asincronas)
+
+test('renders learn react link', async () => {
+  const {findByText} = render(<App />);
+  const title = await findByText(/Ultima Búsqueda/i);
+  expect(title).toBeInTheDocument();
 });
