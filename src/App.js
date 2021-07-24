@@ -21,7 +21,7 @@ function App() {
             <Suspense fallback={null}>
               <Route path="/" component={HomeView}></Route>
             </Suspense>
-              <Route path="/search/:search" component={SearchResultView}></Route>
+              <Route path="/search/:search/:rating?" component={SearchResultView}></Route>
               <Route path="/gif/:id" component={DetailsGifView}></Route>
               <Route path="/404" component={() =>  <h1>Page Not Found</h1>}></Route>
           </GifsProvider>

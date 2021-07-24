@@ -16,7 +16,6 @@ const DetailsGifView = (props) => {
 
   const title = gif ? gif.title : "Cargando";
   const description = gif ? gif.url : "";
-  console.log(title, description);
   useEffect(() => {
     if(!gif) return gifService({id}).then(gif => setGif(gif)).catch((err) => setLocation("/404"));
     // eslint-disable-next-line
